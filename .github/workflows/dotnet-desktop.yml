@@ -1,0 +1,44 @@
+name: Build FDO and AOT Versions
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-fdo:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build FDO version
+        run: dotnet publish -c Release -o publish/fdo --no-restore
+      - name: Upload FDO artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shenmeji-fdo
+          path: publish/fdo
+
+  build-aot:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build AOT version
+        run: dotnet publish -c Release -o publish/aot --no-restore /p:PublishAot=true
+      - name: Upload AOT artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shenmeji-aot
+          path: publish/aot
