@@ -13,6 +13,8 @@
     <PublishReadyToRun>true</PublishReadyToRun>
     <PublishSingleFile>false</PublishSingleFile>
     <SelfContained>false</SelfContained>
+
+  <PublishAot>true</PublishAot>
   </PropertyGroup>
 
   <ItemGroup>
