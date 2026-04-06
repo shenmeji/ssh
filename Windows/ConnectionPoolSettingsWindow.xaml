@@ -1,0 +1,30 @@
+<Window x:Class="SimpleSshClient.Windows.ConnectionPoolSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="连接池设置"
+        Width="400"
+        Height="200"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Text="连接池设置" FontSize="16" FontWeight="Bold" Margin="0,0,0,20"/>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="最大连接数:" Width="100" VerticalAlignment="Center"/>
+            <TextBox x:Name="TxtMaxConnections" Width="100" VerticalAlignment="Center" Text="20"/>
+            <TextBlock Text="(1-100)" VerticalAlignment="Center" Foreground="Gray"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="BtnCancel" Content="取消" Width="80" Click="BtnCancel_Click"/>
+            <Button x:Name="BtnSave" Content="保存" Width="80" Click="BtnSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
