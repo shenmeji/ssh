@@ -13,6 +13,7 @@
     <PublishReadyToRun>true</PublishReadyToRun>
     <PublishSingleFile>false</PublishSingleFile>
     <SelfContained>false</SelfContained>
+  <PublishTrimmed>false</PublishTrimmed>
 
   </PropertyGroup>
 
