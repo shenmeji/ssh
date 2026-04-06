@@ -1,4 +1,4 @@
-name: Build FDO and Self-Contained Versions
+name: Build FDO Version
 
 on:
   push:
@@ -24,21 +24,3 @@ jobs:
         with:
           name: shenmeji-fdo
           path: publish/fdo
-
-  build-self-contained:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 10.0.x
-      - name: Restore dependencies
-        run: dotnet restore
-      - name: Build self-contained version
-        run: dotnet publish -c Release -o publish/self-contained --no-restore --self-contained true
-      - name: Upload self-contained artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: shenmeji-self-contained
-          path: publish/self-contained
