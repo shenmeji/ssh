@@ -18,7 +18,7 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
       - name: Build FDO version
-        run: dotnet publish -c Release -o publish/fdo --no-restore -p:PublishTrimmed=false
+        run: dotnet publish -c Release -o publish/fdo --no-restore
       - name: Upload FDO artifact
         uses: actions/upload-artifact@v4
         with:
@@ -36,7 +36,7 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
       - name: Build self-contained version
-        run: dotnet publish -c Release -o publish/self-contained --no-restore --self-contained true -p:PublishTrimmed=false
+        run: dotnet publish -c Release -o publish/self-contained --no-restore --self-contained true
       - name: Upload self-contained artifact
         uses: actions/upload-artifact@v4
         with:
