@@ -6,7 +6,7 @@
 应用程序下载：
 
 1MB大小，需要系统安装.net运行时：
-[GitHub源：](https://github.com/user-attachments/files/26521152/shenmeji_fdo.zip)
-[Cloudflare源：](https://cdn.shenmeji.com/shenmeji_fdo.zip)
+[GitHub源](https://github.com/user-attachments/files/26521152/shenmeji_fdo.zip)
+[Cloudflare源](https://cdn.shenmeji.com/shenmeji_fdo.zip)
 
-Cloudflare源：[独立运行版 shenmeji.zip 65mb](https://cdn.shenmeji.com/shenmeji.zip)
+[Cloudflare源 独立运行版 65mb](https://cdn.shenmeji.com/shenmeji.zip)
