@@ -1,4 +1,4 @@
-name: Build FDO and AOT Versions
+name: Build FDO and Self-Contained Versions
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
           name: shenmeji-fdo
           path: publish/fdo
 
-  build-aot:
+  build-self-contained:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,10 +35,10 @@ jobs:
           dotnet-version: 10.0.x
       - name: Restore dependencies
         run: dotnet restore
-      - name: Build AOT version
-        run: dotnet publish -c Release -o publish/aot --no-restore /p:PublishAot=true
-      - name: Upload AOT artifact
+      - name: Build self-contained version
+        run: dotnet publish -c Release -o publish/self-contained --no-restore --self-contained true
+      - name: Upload self-contained artifact
         uses: actions/upload-artifact@v4
         with:
-          name: shenmeji-aot
-          path: publish/aot
+          name: shenmeji-self-contained
+          path: publish/self-contained
