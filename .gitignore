@@ -1,0 +1,24 @@
+# Build outputs
+bin/
+obj/
+
+# IDE files
+.vs/
+*.suo
+*.user
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
